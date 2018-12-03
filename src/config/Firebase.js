@@ -1,13 +1,8 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase';
+import firebaseConf  from './config';
 
-const config = {
-    apiKey: "AIzaSyC2mhJdxogyhPsookowwk2vKIHcAS3IIx8",
-    authDomain: "bogota-routes.firebaseapp.com",
-    databaseURL: "https://bogota-routes.firebaseio.com",
-    projectId: "bogota-routes",
-    storageBucket: "",
-    messagingSenderId: "384695102688"
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConf);
 }
 
-const firebaseConf = firebase.initializeApp(config);
-export default firebaseConf;
+export const authRef = firebase.auth();
