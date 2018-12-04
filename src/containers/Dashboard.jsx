@@ -1,12 +1,15 @@
 import React from 'react';
 import Input from '../components/Input';
 import Button from '../components/Button';
+import Map from '../components/Map';
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+
 
 const Dashboard = () => (
   <div className="Dashboard">
     <div className="Dashboard-container">
       <div className="Dashboard-form">
-        <h2>Insert points</h2>
+        <h2>Create a new service</h2>
         <form>
           <Input
             name="description"
@@ -31,7 +34,9 @@ const Dashboard = () => (
           </Button>
         </form>
       </div>
+
       <div className="Dashboard-map">
+        <Map isMarkerShown />
       </div>
     </div>
   </div>
