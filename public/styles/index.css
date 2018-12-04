@@ -1,0 +1,62 @@
+.Login-input label{
+  display: none;
+  position: relative;
+}
+
+input{
+  font-size: 14px;
+  display: block;
+  width: calc(100% - 30px);
+  margin: 5px;
+  padding: 10px;
+}
+
+.suggestion-item-active {
+background-color: #f2f2f2 !important;
+    margin-bottom: 5px;
+    padding: 5px 10px
+}
+
+.suggestion-item {
+    background-color: #f2f2f2 !important;
+    margin-bottom: 5px;
+    padding: 5px 10px
+}
+
+.Dashboard, .Login {
+  padding: 16px;
+}
+
+.Dashboard-container, .Login-container {
+  display: grid;
+  grid-template-columns: minmax(auto, 524px);
+  justify-content: center;
+}
+
+.Dashboard-form, .Login-form {
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.3);
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 16px;
+}
+
+.Dashboard-map {
+  margin-top: 13px;
+}
+
+.sub-information {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.Login-form Button {
+  margin: 5px;
+  padding: 10px;
+}
+
+.Login-form h2 {
+  text-align: center;
+}
