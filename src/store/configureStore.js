@@ -6,7 +6,6 @@ const initialState = {
 }
 
 const reducer = (state=initialState, action) => {
-  console.log(action.user)
     if(action.type === 'USER_LOGIN') {
         return {
             ...state,
