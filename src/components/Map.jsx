@@ -56,6 +56,7 @@ const Map = compose(
       {props.directions && <DirectionsRenderer directions={props.directions} />}
     </GoogleMap>
     <div className="sub-information">
+      Description: {props.description} <br/>
       Tiempo promedio de viaje es <strong>{props.duration}</strong> con <strong>{props.distance}</strong> entre <strong>{props.originValue} ({props.originAddresses})</strong> y <strong>{props.destinationValue} ({props.destinationAddresses})</strong>
     </div>
   </div>

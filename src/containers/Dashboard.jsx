@@ -12,6 +12,7 @@ class Dashboard extends Component {
     origin: {},
     destination: {},
     showMap: false,
+    description: '',
   }
 
   handleChange = originValue => {
@@ -56,6 +57,13 @@ class Dashboard extends Component {
       .catch(error => console.error('Error', error));
   }
 
+  handleChangeDesc = (event) => {
+    event.preventDefault();
+    this.setState({
+      description: event.target.value,
+    });
+  }
+
   Logout = () => {
     authRef.signOut().then(function() {
       history.push('home');
@@ -72,7 +80,7 @@ class Dashboard extends Component {
 
   render() {
     const { destinationValue, originValue } = this.state;
-    const { destination, origin } = this.state;
+    const { destination, origin, description } = this.state;
     return (
       <div className="Dashboard">
         <div className="Dashboard-container">
@@ -84,6 +92,8 @@ class Dashboard extends Component {
               label="Description"
               type="text"
               placeholder="Description"
+              value={description}
+              onChange={this.handleChangeDesc}
             />
             <PlacesAutocomplete
               value={originValue}
@@ -159,6 +169,7 @@ class Dashboard extends Component {
                 destination={destination}
                 originValue={originValue}
                 destinationValue={destinationValue}
+                description={description}
               />)
             }
           </div>
