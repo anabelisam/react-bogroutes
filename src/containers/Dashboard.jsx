@@ -85,7 +85,6 @@ class Dashboard extends Component {
               type="text"
               placeholder="Description"
             />
-
             <PlacesAutocomplete
               value={originValue}
               onChange={this.handleChange}
@@ -119,7 +118,6 @@ class Dashboard extends Component {
                 </div>
               )}
             </PlacesAutocomplete>
-
             <PlacesAutocomplete
               value={destinationValue}
               onChange={this.handleChange2}
@@ -153,7 +151,6 @@ class Dashboard extends Component {
                 </div>
               )}
             </PlacesAutocomplete>
-
           </div>
           <div className="Dashboard-map">
             {origin.lat && destination.lat && (

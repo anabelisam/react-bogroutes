@@ -29,7 +29,7 @@ class Login extends Component {
     <div className="Login">
       <div className="Login-container">
         <div className="Login-form">
-          <h2>Login {this.props.email}</h2>
+          <h2>Login</h2>
           <form onSubmit={this.handleSubmit} ref={el => (this.loginForm = el)}>
             <Input
               name="username"
@@ -44,6 +44,9 @@ class Login extends Component {
               placeholder="Password"
             />
             <Button>Login</Button>
+            {this.props.errorMessage &&
+              <h3>{this.props.errorMessage}</h3>
+            }
           </form>
         </div>
       </div>
@@ -60,7 +63,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = state => {
   return {
-    email: state.user.email
+    errorMessage: state.errorMessage
   }
 }
 
