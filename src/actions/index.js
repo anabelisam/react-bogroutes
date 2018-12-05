@@ -12,6 +12,9 @@ export const userLogin = (username, password) =>  dispatch => {
       history.push('dashboard')
     })
     .catch(error => {
-      console.log(error);
+      dispatch({
+        type: 'LOGIN_ERROR',
+        errorMessage: error.message,
+      });
     });
 };
