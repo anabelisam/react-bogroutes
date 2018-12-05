@@ -23,11 +23,11 @@ background-color: #f2f2f2 !important;
     padding: 5px 10px
 }
 
-.Dashboard, .Login {
+.Dashboard, .Login, .Home {
   padding: 16px;
 }
 
-.Dashboard-container, .Login-container {
+.Dashboard-container, .Login-container, .Home-container {
   display: grid;
   grid-template-columns: minmax(auto, 524px);
   justify-content: center;
@@ -58,5 +58,9 @@ background-color: #f2f2f2 !important;
 }
 
 .Login-form h2 {
+  text-align: center;
+}
+
+.Home-container {
   text-align: center;
 }
