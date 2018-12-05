@@ -1,4 +1,5 @@
 import { authRef } from '../config/firebase';
+import history from '../utils/history';
 
 export const userLogin = (username, password) =>  dispatch => {
   authRef
@@ -7,7 +8,8 @@ export const userLogin = (username, password) =>  dispatch => {
       dispatch({
         type: 'USER_LOGIN',
         user: result.user,
-      })
+      });
+      history.push('dashboard')
     })
     .catch(error => {
       console.log(error);

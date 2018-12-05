@@ -6,9 +6,9 @@ import { Switch, Route } from "react-router-dom";
 
 const App = () => (
   <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/login" exact component={Login} />
-    <Route path="/dashboard" exact component={Dashboard} />
+    <Route path="/" exact name="Home" component={Home} />
+    <Route path="/login" exact name="Login" component={Login} />
+    <Route path="/dashboard" exact name="dashboard" component={Dashboard} />
   </Switch>
 );
 

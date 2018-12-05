@@ -3,6 +3,8 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import { connect } from 'react-redux';
 import { userLogin } from '../actions';
+import { authRef } from '../config/firebase';
+import history from '../utils/history';
 
 class Login extends Component {
 
@@ -13,6 +15,14 @@ class Login extends Component {
     const password = form.get('password');
     this.props.login(username, password);
   };
+
+  componentDidMount = () => {
+    authRef.onAuthStateChanged(function (user) {
+      if (user) {
+        history.push('dashboard');
+      }
+    });
+  }
 
   render() {
     return(

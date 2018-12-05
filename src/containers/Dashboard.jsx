@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Map from '../components/Map';
 import Input from '../components/Input';
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import { authRef } from '../config/firebase';
+import history from '../utils/history';
 
 class Dashboard extends Component {
   state = {
@@ -54,6 +56,20 @@ class Dashboard extends Component {
       .catch(error => console.error('Error', error));
   }
 
+  Logout = () => {
+    authRef.signOut().then(function() {
+      history.push('home');
+    })
+  }
+
+  componentDidMount = () => {
+    authRef.onAuthStateChanged(function (user) {
+      if (!user) {
+        history.push('login');
+      }
+    });
+  }
+
   render() {
     const { destinationValue, originValue } = this.state;
     const { destination, origin } = this.state;
@@ -62,7 +78,7 @@ class Dashboard extends Component {
         <div className="Dashboard-container">
           <div className="Dashboard-form">
             <h2>Create a new service</h2>
-
+            <button onClick={this.Logout}>Logout</button>
             <Input
               name="description"
               label="Description"
