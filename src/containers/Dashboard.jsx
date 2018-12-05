@@ -85,8 +85,12 @@ class Dashboard extends Component {
       <div className="Dashboard">
         <div className="Dashboard-container">
           <div className="Dashboard-form">
-            <h2>Create a new service</h2>
-            <button onClick={this.Logout}>Logout</button>
+            <div className="Dashboard-header">
+              <h2>Create a new service</h2>
+              <div className="Logout-button">
+                <button onClick={this.Logout}>Logout</button>
+              </div>
+            </div>
             <Input
               name="description"
               label="Description"
