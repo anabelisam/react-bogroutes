@@ -1,4 +1,4 @@
-# Drawing routes and expected time using react.js
+# Drawing routes in a map using react.js
 ## react-bogroutes
 
 This projects is a simple app with react.js. 
